@@ -48,3 +48,7 @@ Pull requests welcome! To contribute:
 - Commit your changes (`git commit -am 'Add some feature`)
 - Push to the branch (`git push origin your-new-feature`)
 - Create a new Pull Request
+
+### Changes made to the Plugin
+
+- show all users who reacted with an emoji (as the number of users listed in the tooltip is restricted to the first two)
