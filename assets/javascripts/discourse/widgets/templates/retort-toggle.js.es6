@@ -21,7 +21,7 @@ export default Ember.Object.create({
   },
 
   sentence() {
-    let usernames = this.state.usernames;
+    let usernames = this.state.usernames
     switch (usernames.length) {
       case 1:  return `${usernames[0]}`
       case 2:  return `${usernames[0]}, ${usernames[1]}`
