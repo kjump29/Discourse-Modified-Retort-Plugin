@@ -22,14 +22,25 @@ export default Ember.Object.create({
 
   sentence() {
     let usernames = this.state.usernames;
-    switch (usernames.length) {
-      case 1:  return `${usernames[0]}`
-      case 2:  return `${usernames[0]} und ${usernames[1]}`
-      case 3:  return `${usernames[0]}, ${usernames[1]}, ${usernames[2]}`
-      case 4:  return `${usernames[0]}, ${usernames[1]}, ${usernames[2]}, ${usernames[3]}` 
-      default: return `${usernames[0]}, ${usernames[1]}, and ${usernames.length - 2} others reacted with :${this.state.emoji}:`
+    var i;
+    var text;
+    for (i=0; i<usernames.length; i++) {
+      if (i=0) {
+        text += `${usernames[i]}` ;
+      }
+      else {
+         text += `, ${usernames[i]}` ;
+      }
     }
     return text;
+//    switch (usernames.length) {
+//      case 1:  return `${usernames[0]}`
+//      case 2:  return `${usernames[0]}, ${usernames[1]}`
+//      case 3:  return `${usernames[0]}, ${usernames[1]}, ${usernames[2]}`
+//      case 4:  return `${usernames[0]}, ${usernames[1]}, ${usernames[2]}, ${usernames[3]}` 
+//      default: return `${usernames[0]}, ${usernames[1]}, and ${usernames.length - 2} others reacted with :${this.state.emoji}:`
+//    }
+//    return text;
   }
 
 })
